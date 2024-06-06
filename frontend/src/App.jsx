@@ -15,7 +15,7 @@ const App = () => {
       return alert("ALl Fileds are required");
     }
 
-    const apiEndPoint = "http://localhost:5050/vote";
+    const apiEndPoint = "/api/v1/vote";
     const response = await fetch(apiEndPoint, {
       headers: {
         "Content-Type": "application/json",
@@ -42,6 +42,7 @@ const App = () => {
             Full Name
           </label>
           <input
+            value={state.name}
             className="form-control"
             type="text"
             name="name"
@@ -54,6 +55,7 @@ const App = () => {
             Email Address
           </label>
           <input
+            value={state.email}
             type="email"
             name="email"
             className="form-control"
@@ -65,7 +67,12 @@ const App = () => {
           <label htmlFor="vote" className="form-label">
             Bike Company
           </label>
-          <select name="vote" className="form-control" onChange={handleChange}>
+          <select
+            name="vote"
+            className="form-control"
+            onChange={handleChange}
+            value={state.vote}
+          >
             <option value="">Select a Bike Company</option>
             <option value="yamaha">Yamaha</option>
             <option value="royal enfield">Royal Enfield</option>
