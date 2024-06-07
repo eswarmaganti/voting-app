@@ -6,7 +6,11 @@ import path from "path";
 import { fileURLToPath } from "url";
 import mongoose from "mongoose";
 import voteRouter from "./router/vote.js";
+
+
 dotenv.config();
+
+
 
 // mongodb connection
 try {

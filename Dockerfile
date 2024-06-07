@@ -19,6 +19,6 @@ COPY --chown=node:node backend/src ./backend/src
 RUN cd frontend && npm run build
 
 # expose the 5050 port
-ENV PORT=5050
+EXPOSE 5050
 
 CMD ["node", "backend/src/server.js"]
